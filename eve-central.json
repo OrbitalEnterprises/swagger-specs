@@ -6,14 +6,16 @@ host: api.eve-central.com
 basePath: /api
 schemes:
   - http
+produces:
+  - application/json
 paths:
-  '/marketstat/json':
+  /marketstat/json:
     get:
       summary: Provide EVE market summary
       description: 'https://eve-central.com/home/develop.html'
       operationId: requestMarketstat
-      produces:
-        - application/json
+      tags:
+        - MarketStat
       parameters:
         - name: hours
           in: query
@@ -55,53 +57,27 @@ paths:
           type: integer
           format: int64
       responses:
-        '200':
+        200:
           description: Market info
           schema:
-            $ref: '#/definitions/MarketInfo'
+            type: array
+            items:
+              $ref: "#/definitions/MarketInfo"
 definitions:
   MarketInfo:
-    type: array
-    items:
-      $ref: '#/definitions/TypeMarketInfo'
-  TypeMarketInfo:
     type: object
     properties:
       buy:
-        $ref: '#/definitions/SideInfo'
+        $ref: "#/definitions/SideInfo"
       all:
-        $ref: '#/definitions/SideInfo'
+        $ref: "#/definitions/SideInfo"
       sell:
-        $ref: '#/definitions/SideInfo'
+        $ref: "#/definitions/SideInfo"
   SideInfo:
     type: object
     properties:
       forQuery:
-        type: object
-        properties:
-          bid:
-            type: boolean
-          types:
-            type: array
-            items:
-              type: integer
-              format: int32
-          regions:
-            type: array
-            items:
-              type: integer
-              format: int64
-          systems:
-            type: array
-            items:
-              type: integer
-              format: int64
-          hours:
-            type: integer
-            format: int32
-          minq:
-            type: integer
-            format: int32
+        $ref: "#/definitions/ForQueryInfo"
       volume:
         type: integer
         format: int64
@@ -134,3 +110,29 @@ definitions:
       generated:
         type: integer
         format: int64
+  ForQueryInfo:
+    type: object
+    properties:
+      bid:
+        type: boolean
+      types:
+        type: array
+        items:
+          type: integer
+          format: int32
+      regions:
+        type: array
+        items:
+          type: integer
+          format: int64
+      systems:
+        type: array
+        items:
+          type: integer
+          format: int64
+      hours:
+        type: integer
+        format: int32
+      minq:
+        type: integer
+        format: int32
