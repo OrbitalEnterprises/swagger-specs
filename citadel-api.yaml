@@ -1,0 +1,68 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Citadel API fomr https://stop.hammerti.me.uk
+host: stop.hammerti.me.uk
+basePath: /api
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  '/citadel/{citadel_id}':
+    get:
+      tags:
+        - Citadel
+      summary: Retrieve information about a single citadel
+      description: ''
+      operationId: getCitadel
+      parameters:
+        - name: citadel_id
+          in: path
+          description: Unique citadel ID
+          required: true
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: citadel info
+          schema:
+            type: object,
+            additionalProperties:
+              $ref: '#/definitions/Citadel'
+definitions:
+  Citadel:
+    type: object
+    properties:
+      typeId:
+        type: integer
+        format: int32
+        description: Citadel type ID
+      systemId:
+        type: integer
+        format: int64
+        description: System ID of system where citadel is located
+      name:
+        type: string
+        description: Citadel name
+      typeName:
+        type: string
+        description: Citadel type name
+      lastSeen:
+        type: string
+        format: date-time
+        description: Last time (UTC) citadel was seen
+      systemName:
+        type: string
+        description: Name of system where citadel is located
+      regionId:
+        type: integer
+        format: int32
+        description: Region ID of citadel location
+      firstSeen:
+        type: string
+        format: date-time
+        description: Time (UTC) when citadel was first seen
+      regionName:
+        type: string
+        description: Name of region where citadel is located
