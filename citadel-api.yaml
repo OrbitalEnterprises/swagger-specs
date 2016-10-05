@@ -9,7 +9,7 @@ schemes:
 produces:
   - application/json
 paths:
-  '/citadel/{citadel_id}':
+  /citadel/{citadel_id}:
     get:
       tags:
         - Citadel
@@ -27,7 +27,7 @@ paths:
         200:
           description: citadel info
           schema:
-            type: object,
+            type: object
             additionalProperties:
               $ref: '#/definitions/Citadel'
 definitions:
