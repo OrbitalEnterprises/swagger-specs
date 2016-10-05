@@ -9,6 +9,20 @@ schemes:
 produces:
   - application/json
 paths:
+  /citadel/all:
+    get:
+      tags:
+        - Citadel
+      summary: Retrieve all citadel information
+      description: ''
+      operationId: getAllCitadels
+      responses:
+        200:
+          description: citadel info
+          schema:
+            type: object
+            additionalProperties:
+              $ref: '#/definitions/Citadel'
   /citadel/{citadel_id}:
     get:
       tags:
