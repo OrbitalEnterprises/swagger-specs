@@ -11,6 +11,5 @@ Tools like the [Swagger Editor](http://swagger.io/swagger-editor/) don't have a 
 ## List of Specifications
 
 * [Eve Central](https://eve-central.com/) Site collecting various EVE Online market data.
-* [Citadel Info API](https://stop.hammerti.me.uk/api/) Site collecting player sourced info on Citadels
-
-
+* [Citadel Info API](https://stop.hammerti.me.uk/api/) Site collecting player sourced info on Citadels.
+* [CREST Market Price Snapshot](http://eveonline-third-party-documentation.readthedocs.io/en/latest/crest/eve/eve_market.html) Market price snapshot from CREST.
