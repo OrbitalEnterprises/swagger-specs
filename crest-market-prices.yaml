@@ -15,7 +15,7 @@ paths:
       description: 'http://eveonline-third-party-documentation.readthedocs.io/en/latest/crest/eve/eve_market.html'
       operationId: requestMarketPrices
       tags:
-        - Market Prices
+        - MarketPrices
       responses:
         200:
           description: Market price object
