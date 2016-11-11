@@ -51,32 +51,35 @@ definitions:
       typeId:
         type: integer
         format: int32
-        description: Citadel type ID
+        description: Structure type ID
       systemId:
         type: integer
         format: int64
-        description: System ID of system where citadel is located
+        description: System ID of system where structure is located
       name:
         type: string
-        description: Citadel name
+        description: Structure name
       typeName:
         type: string
-        description: Citadel type name
+        description: Structure type name
       lastSeen:
         type: string
         format: date-time
-        description: Last time (UTC) citadel was seen
+        description: Last time (UTC) structure was seen
       systemName:
         type: string
-        description: Name of system where citadel is located
+        description: Name of system where structure is located
       regionId:
         type: integer
         format: int32
-        description: Region ID of citadel location
+        description: Region ID of structure location
       firstSeen:
         type: string
         format: date-time
-        description: Time (UTC) when citadel was first seen
+        description: Time (UTC) when structure was first seen
       regionName:
         type: string
-        description: Name of region where citadel is located
+        description: Name of region where structure is located
+      public:
+        type: boolean
+        description: Whether or not the structure is currently publicly accessible
